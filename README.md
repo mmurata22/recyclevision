@@ -1,167 +1,83 @@
-# Project Overview
+# RecycleVision Frontend
 
-The OpenCV RecycleVision project aims to leverage computer vision and machine learning techniques to enhance recycling efficiency and accuracy. By automatically identifying and sorting recyclable materials, this project seeks to reduce waste, improve recycling rates, and streamline waste management processes.
+## Project Overview
+The OpenCV RecycleVision project aims to leverage computer vision and machine learning techniques to enhance recycling efficiency. This repository contains the **React Frontend** interface.
 
-# Running Project
-This project is split into two folders: `/frontend` and `/backend`. Both must be run in separate terminals.
+## Running Locally
 
-## Frontend Setup
-1. Open a terminal in the frontend folder:
-```
-cd frontend
-```
-2. Install dependencies (first time):
+### 1. Install Dependencies
+Open a terminal in the repository root (WSL or PowerShell) and run:
 ```
 npm install
 ```
-3. Start the React App:
+### 2. Start the React App
 ```
 npm start
 ```
-The frontend will be available at: http://localhost:3000
+The frontend will be available at:
+http://localhost:3000
 
-## Backend Setup
-1. cd backend
-```
-cd backend
-```
-2. Create a python virtual environment:
-```
-python -m venv venv
-```
-3. Activate the environment
+### 3. Connecting to the Backend
+Ensure your Backend API is running. By default, this frontend expects the backend at http://localhost:5000. If you are deploying to production (e.g., Render), update your API URL variable to the live server address.
 
-Windows (PowerShell):
-```
-venv\Scripts\activate
-```
+## Development Environment & Set Up (Node.js)
 
-Linux/macOS/WSL:
-```
-source venv/bin/activate
-```
+This guide describes how to set up the development environment using WSL and Node.js.
 
-4. Install backend dependencies:
-```
-pip install flask opencv-python flask-cors
-```
+1. Install WSL (Ubuntu)
 
-5. Start the flask backend:
+(Skip if you already have WSL installed)
+
+- Open PowerShell as Administrator.
+
+- Run: wsl --install
+
+- Restart your machine if prompted and create a Linux user account.
+
+2. Install Node.js in WSL
+
+We use nvm (Node Version Manager):
+
+- Install nvm:
 ```
-python app.py
+curl -o- [https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh](https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh) | bash
 ```
 
-The backend will run on: http://localhost:5000
+- Load nvm (or restart terminal):
 
-# Development Environment and Set Up
-
-This guide describes how to set up the develpment environment, using *Windows Subsystem for Linux (WSL)*, *Docker*, *Node.js*, and *GitHub*, for cross-platform development and containerization.
-
-> NOTE: This guide assumes you are on Windows. Linux/macOS support will be added later.
-
-## 1. Install WSL (Ubuntu)
-1. Open *PowerShell as Administrator*
-2. Run the command:
-```powershell 
-wsl --install
-```
-3. Restart your machine if prompted
-4. Use the default Ubuntu distribution
-5. When prompted, create a Linux user account
-
-You can open Ubuntu anytime from the Start menu by typing Ubuntu, or by running the terminal and using the command `wsl`.
-
-## 2. Install Docker in WSL
-Follow the [Docker Desktop WSL Guide](https://docs.docker.com/desktop/features/wsl/)
-1. Install Docker Desktop for Windows
-2. In Docker Desktop > Settings > General, enusre **Use WSL 2 based engine** is enabled
-3. In Ubuntu (WSL), run:
-
-```
-sudo apt install apt-transport-https ca-certificates curl software-properties-common lsb-release -y
-```
-4. Add Docker's GPG key:
-```
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-```
-5. Add Docker repository:
-```
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] \
-  https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-```
-6. Install Docker engine:
-```
-sudo apt update
-sudo apt install docker-ce docker-ce-cli containerd.io -y
-```
-7. (Optional) Allow your user to run Docker without `sudo`:
-```
-sudo usermod -aG docker $USER
-```
-8. Restart Ubuntu:
-```
-exit
-wsl
-```
-9. Test Docker:
-```
-docker run hello-world
-```
-
-## 3. Install Node.js in WSL
-1. Use nvm (Node Version Manager):
-```
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
-```
-2. (Optional) load nvm immediately:
 ```
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 ```
-3. Install LTS version of Node.js
+
+- Install Node.js (LTS):
 ```
 nvm install --lts
 nvm use --lts
 nvm alias default lts/*
 ```
-4. (Optional) Verify Installation:
+
+- Verify Installation:
 ```
 node -v
 npm -v
 ```
+3. Configure Git + SSH
 
-## 4. Configure Git + SSH
-1. Set your email/username:
+- Set Username/Email:
 ```
 git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
 ```
-2. Generate SSH Key:
+- Generate SSH Key:
 ```
 ssh-keygen -t ed25519 -C "your.email@example.com"
-```
-3. Start SSH agent + add key:
-```
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 ```
-4. Copy public key + add to GitHub
-```
-cat ~/.ssh/id_ed25519.pub
-```
-5. Add the public key to GitHub:
-```
-GitHub → Settings → SSH and GPG keys → New SSH key
-```
+- Add to GitHub: Copy the key (cat ~/.ssh/id_ed25519.pub) and add it to GitHub Settings → SSH and GPG keys.
 
-## 5. Clone the Repository
-1. Run the code to clone git repo into WSL:
+4. Clone the Repository
 ```
-cd ~ 
-mkdir recyclevision
-cd recyclevision
-git clone git@github.com:mmurata22/recyclevision.git
+git clone [https://github.com/YOUR_USERNAME/recyclevision-web.git](https://github.com/mmurata22/recyclevision-web.git)
 ```
-
-From here, you can open the project in VS Code, run npm install, npm start, or manage the repo via GitHub Desktop by adding the folder via File > Add Local Repository.
