@@ -2,6 +2,57 @@
 
 The OpenCV RecycleVision project aims to leverage computer vision and machine learning techniques to enhance recycling efficiency and accuracy. By automatically identifying and sorting recyclable materials, this project seeks to reduce waste, improve recycling rates, and streamline waste management processes.
 
+# Running Project
+This project is split into two folders: `/frontend` and `/backend`. Both must be run in separate terminals.
+
+## Frontend Setup
+1. Open a terminal in the frontend folder:
+```
+cd frontend
+```
+2. Install dependencies (first time):
+```
+npm install
+```
+3. Start the React App:
+```
+npm start
+```
+The frontend will be available at: http://localhost:3000
+
+## Backend Setup
+1. cd backend
+```
+cd backend
+```
+2. Create a python virtual environment:
+```
+python -m venv venv
+```
+3. Activate the environment
+
+Windows (PowerShell):
+```
+venv\Scripts\activate
+```
+
+Linux/macOS/WSL:
+```
+source venv/bin/activate
+```
+
+4. Install backend dependencies:
+```
+pip install flask opencv-python flask-cors
+```
+
+5. Start the flask backend:
+```
+python app.py
+```
+
+The backend will run on: http://localhost:5000
+
 # Development Environment and Set Up
 
 This guide describes how to set up the develpment environment, using *Windows Subsystem for Linux (WSL)*, *Docker*, *Node.js*, and *GitHub*, for cross-platform development and containerization.
