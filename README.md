@@ -1,7 +1,7 @@
-# RecycleVision Frontend
+# Ourion Frontend
 
 ## Project Overview
-The OpenCV RecycleVision project aims to leverage computer vision and machine learning techniques to enhance recycling efficiency. This repository contains the **React Frontend** interface.
+The OpenCV Ourion project aims to leverage computer vision and machine learning techniques to enhance recycling efficiency. This repository contains the **React Frontend** interface.
 
 ## Running Locally
 
@@ -79,5 +79,5 @@ ssh-add ~/.ssh/id_ed25519
 
 4. Clone the Repository
 ```
-git clone [https://github.com/YOUR_USERNAME/recyclevision-web.git](https://github.com/mmurata22/recyclevision-web.git)
+git clone [https://github.com/YOUR_USERNAME/ourion.git](https://github.com/mmurata22/ourion.git)
 ```

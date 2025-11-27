@@ -61,7 +61,7 @@ function Home() {
 
   return (
     <div style={{ padding: 20 }}>
-      <h1>RecycleVision - Upload Product</h1>
+      <h1>Ourion - Upload Product</h1>
       <input type="file" onChange={(e) => setFile(e.target.files[0])} />
       <button onClick={handleUpload} style={{ marginLeft: 10 }}>
         Upload Image
